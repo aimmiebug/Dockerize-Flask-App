@@ -1,4 +1,3 @@
-# requirements
+# nginx requirements
 
-nginx
 flask
