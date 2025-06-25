@@ -62,6 +62,7 @@ apt update
 apt install -y docker.io
 exit
 
+**Now Jenkins container has access to host Docker daemon and can run** docker build, docker run, etc.
 
 
 
