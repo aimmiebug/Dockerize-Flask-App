@@ -1,4 +1,4 @@
-Ypu can use Python or Node.js
+Use Python or Node.js
 # Dockerize a Python Flask App
 Flask App with Python 
 
