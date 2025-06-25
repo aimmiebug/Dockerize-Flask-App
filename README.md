@@ -32,11 +32,34 @@ Then visit: http://localhost:5000
 Js Dockerfile
 
 **3. ▶️Build & Run**
-bash
+**bash**
 docker build -t node-app .
 docker run -p 3000:3000 node-app
 
 **Then visit: http://localhost:3000**
+
+#  Jenkins with Docker access
+**🧰 Step 1: Run Jenkins with Docker Socket Access**
+docker run -d \
+  --name jenkins \
+  -p 8080:8080 -p 50000:50000 \
+  -v jenkins_home:/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -u root \
+  jenkins/jenkins:lts
+
+**🔁 This command:**
+Runs Jenkins as root (so it can run Docker)
+Mounts the host Docker socket into the container
+Uses jenkins/jenkins:lts image
+
+**🔧 Step 2: Install Docker CLI inside Jenkins Container**
+docker exec -u root -it jenkins bash
+Then inside the container:
+**bash**
+apt update
+apt install -y docker.io
+exit
 
 
 
