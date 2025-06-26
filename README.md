@@ -23,14 +23,7 @@ docker build -t flask-app.
 docker run --p 5000:5000 flask-app
 Then visit: http://localhost:5000
 
-# Dockerize a Node.js Express App
-
-**1. 🔧Create Project Files**
-   app.js
-   package.json
-
 **2. 🐳Create Dockerfile**
-Js Dockerfile
 
 **3. ▶️Build & Run**
 **bash**
